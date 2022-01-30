@@ -1,0 +1,5 @@
+# Jupyter Notebook
+notebooks/.ipynb_checkpoints
+
+# config secrets ;)
+notebooks/config.txt

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../static/css/cook.css">
+    <title>SoushiChef | Cook</title>
+    <script defer src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script defer src="./../../static/js/index.js"></script>
+    <script defer type="text/javascript" src="./../../../menu/data.json"></script>
+</head>
+
+<body>
+
+    <div id="page-container">
+
+        <section id="first" class="section-container">
+            <h2>Recipe Information</h2>
+            <div style="height: 60vh; border: 3px solid green; margin: 4vh;">
+                
+            </div>
+            <button id="button" class="real-time-interface__button" onclick="document.getElementById('second').scrollIntoView()">Start Cooking!</button>
+        </section>
+
+        <section id="second" class="section-container">
+            <div class="real-time-interface">
+                <h2 id="real-time-title" class="real-time-interface__title">Step 1 (change my id and class in js to update with data in json)</h2>
+                <h4>You said: </h4>
+                <h4 id="message" class="real-time-interface__message"></h4>
+
+                <h4 id="garlic">Not yet </h4>
+              </div>
+
+        </section>
+
+
+    </div>
+
+    <script src="./../../static/js/new.js"></script>
+</body>
+</html>
+<script>
+    var data = JSON.parse("{{data|escapejs}}");
+    console.log(data);
+</script>

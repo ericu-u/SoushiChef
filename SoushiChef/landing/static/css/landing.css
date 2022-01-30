@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Satisfy:400&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400&subset=latin,latin-ext);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #C86868;
+    font-family: 'Roboto';
+    color: #FFE4E1;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Satisfy';
+    margin-top: 27vh;
+    font-size: 13vh;
+}
+
+h4 {
+    margin-top: 5vh;
+    font-size: 5vh;
+}
+
+button {
+    margin-top: 6vh;
+    font-size: 3vh;
+    border-style: none;
+    border-radius: 50px;
+    border: 1px solid #FFE4E1;
+    padding: 1% 5%;
+    color: #FFE4E1;
+    background-color: #C86868;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: white;
+    cursor: pointer;
+}

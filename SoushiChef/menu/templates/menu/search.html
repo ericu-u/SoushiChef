@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=./../../static/css/menu.css>
+    <script defer src="./../../static/js/modal.js"></script>
+    <title>SoushiChef | Menu</title>
+</head>
+<body>
+    {% load static %}
+    <div class="mainwrap">
+        <div class="search">
+            <form class="inputs" method="POST" action="/menu">
+                {% csrf_token %}
+                {{ searchbar.search }}
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="topfeasts">
+            <h2 id="ftitle">Results for "{{ search }}"</h2>
+            
+            <div id="feed">
+            {% for recipe in results %}
+            
+                <!-- Sample Card -->
+                <div class="card" data-modal="recipeModal{{recipe.id}}">
+                    <div class="fpicwrap">
+                        <img class="fpic" src="{{ recipe.image }}">
+                    </div>
+                    <div class="finfo">
+                        <h3 class="ftitle">{{ recipe.name }}</h3>
+                        <p class="fdesc">{{ recipe.description }}</p>
+                    </div>
+                </div>
+
+                <!-- The Modal -->
+                <div id="recipeModal{{recipe.id}}" class="modal">
+                    <div class="modal-content">
+                    <span class="close" data-modal="recipeModal{{recipe.id}}">&times;</span>
+                    <div class="daiwrap">
+                        <div class="ppicwrap">
+                            <img class="ppic" src="{{ recipe.image }}">
+                        </div>
+                        <div class="pinfo">
+                            <h2 class="ptitle">{{ recipe.name }}</h2>
+                            <h4 class="psub">Time: {{ recipe.time }}</h4>
+                            <p class="pdesc">{{ recipe.description }}</p>
+                        </div>
+                        <div class="ing">
+                            <h4 class="pingt">Ingredients</h4>
+                            <div class="ingsec">
+                            {% for ing in recipe.ingredients %}
+                                <h6 class="ingitem">{{ ing }}</h6>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <button data-name="{{ recipe.name }}" class="cookbtn">Cook</button>
+                    </div>
+                </div>
+
+            {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

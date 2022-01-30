@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400&subset=latin,latin-ext);
+
+:root {
+    --c1: #C86868;
+    --c2: #FF9D9B;
+    --c3: #FFE4E1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: var(--c1);
+    font-family: 'Roboto';
+    text-align: center;
+    color: var(--c1);
+}
+
+.box {
+    background-color: var(--c3);
+    width: 30vw;
+    margin: 20vh auto 0;
+    border-radius: 20px;
+    padding: 3vh;
+}
+
+h2 {
+    font-size: 8vh;
+}
+
+input {
+    width: 87%;
+    margin: 1.5vh auto 0;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 200px;
+    padding: 2.5%;
+}
+
+button {
+    margin-top: 1.5vh;
+    margin-bottom: 2vh;
+    width: 87%;
+    background-color: var(--c2);
+    padding: 2.5%;
+    color: var(--c3);
+    transition: 0.3s;
+    border: 1px solid black;
+    border-radius: 200px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--c3);
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
