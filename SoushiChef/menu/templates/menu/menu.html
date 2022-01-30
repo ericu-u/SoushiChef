@@ -41,7 +41,6 @@
                 <!-- The Modal -->
                 <div id="recipeModal{{recipe.id}}" class="modal">
                     <div class="modal-content">
-                    <span class="close" data-modal="recipeModal{{recipe.id}}">&times;</span>
                     <div class="daiwrap">
                         <div class="ppicwrap">
                             <img class="ppic" src="{{ recipe.image }}">
@@ -49,6 +48,7 @@
                         <div class="pinfo">
                             <h2 class="ptitle">{{ recipe.name }}</h2>
                             <h4 class="psub">Time: {{ recipe.time }}</h4>
+                            <h4 class="pser">Servings: {{ recipe.serving_size }}</h4>
                             <p class="pdesc">{{ recipe.description }}</p>
                         </div>
                         <div class="ing">
@@ -65,6 +65,10 @@
                 </div>
 
             {% endfor %}
+            </div>
+
+            <div>
+                
             </div>
 
         </div>

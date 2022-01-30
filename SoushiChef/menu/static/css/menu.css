@@ -19,8 +19,9 @@ body {
 }
 
 .mainwrap {
-    width: 45%;
+    width: 100%;
     margin: auto;
+    display: flex;
 }
 
 .search {
@@ -137,6 +138,7 @@ body {
     border: 1px solid #888;
     width: 80%;
     border-radius: 20px;
+    border: 1px solid black;
     color: black;
 }
   
@@ -186,7 +188,13 @@ body {
     font-size: 4vh;
 }
 
+.pinfo .pser {
+    font-size: 4vh;
+    display: inline;
+}
+
 .pinfo .pdesc {
+    padding-top: 2.5%;
     font-size: 3vh;
 }
 

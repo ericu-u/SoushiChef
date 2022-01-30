@@ -9,17 +9,6 @@ for (var i = 0; i < btn.length; i++) {
     }, false);
 }
 
-// For closing modal with (x)
-var span = document.getElementsByClassName("close");
-for (var i = 0; i < span.length; i ++) {
-    var thisSpan = span[i];
-    thisSpan.addEventListener("click", function(){
-        var modal = document.getElementById(this.dataset.modal);
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-    }, false);
-}
-
 // For closing modal by clicking outside
 var modals = document.getElementsByClassName("modal")
 for (var i = 0; i < modals.length; i ++) {

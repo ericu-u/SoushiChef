@@ -5,42 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../../static/css/cook.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="./../../static/js/scroll.js"></script>
     <title>SoushiChef | Cook</title>
-    <script defer src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
-    <script defer src="./../../static/js/index.js"></script>
-    <script defer type="text/javascript" src="./../../../menu/data.json"></script>
 </head>
 
 <body>
+    <section id="first" class="section-container">
+        <h3 id="title">Recipe Information</h2>
+        <h3 id="name">{{ recipe.name }}</h3>
+        <div id="i-wrapper">
+            <img src="{{ recipe.image }}">
+        </div>
+        <div id="tb">
+            <h3 id="time">Time: {{ recipe.time }}</h3>
+            <h3 id="serving">Serving Size: {{ recipe.serving_size }}</h3>
+        </div>
+        <button id="st-bt">Start Cooking!</button>
+    </section>
 
-    <div id="page-container">
+    {% for step in recipe.recipe %}
+    <section class="section-container">
+        <h3 class="count">{{ forloop.counter }}</h3>
+        <h3 class="instr">{{ step }}</h1>
+    </section>
+    {% endfor %}
 
-        <section id="first" class="section-container">
-            <h2>Recipe Information</h2>
-            <div style="height: 60vh; border: 3px solid green; margin: 4vh;">
-                
-            </div>
-            <button id="button" class="real-time-interface__button" onclick="document.getElementById('second').scrollIntoView()">Start Cooking!</button>
-        </section>
+    <section id="last" class="section-container">
+        <h3 id="maido">Enjoy your {{ recipe.name }}!</h3>
+        <button id="ed-bt" onclick="location.href = '/menu'">Home</button>
+    </section>
 
-        <section id="second" class="section-container">
-            <div class="real-time-interface">
-                <h2 id="real-time-title" class="real-time-interface__title">Step 1 (change my id and class in js to update with data in json)</h2>
-                <h4>You said: </h4>
-                <h4 id="message" class="real-time-interface__message"></h4>
-
-                <h4 id="garlic">Not yet </h4>
-              </div>
-
-        </section>
-
-
-    </div>
-
-    <script src="./../../static/js/new.js"></script>
+    <!-- Navigation Buttons -->
+    
+    <div class="nav" id="back"></div>
+    <div class="nav" id="forward"></div>
+    
+    <i id="iback" class="material-icons md-50 pointer">arrow_back_ios</i>
+    <i id="iforward" class="material-icons md-50 pointer">arrow_forward_ios</i>
 </body>
 </html>
-<script>
-    var data = JSON.parse("{{data|escapejs}}");
-    console.log(data);
-</script>

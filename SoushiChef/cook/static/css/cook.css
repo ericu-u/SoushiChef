@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Satisfy:400&subset=latin,latin-ext);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400&subset=latin,latin-ext);
+.material-icons.md-36 { font-size: 72px; }
 
 * {
   box-sizing: border-box;
@@ -15,33 +16,53 @@ body {
   font-family: "Roboto";
   color: #ffe4e1;
   text-align: center;
+  overflow: hidden;
 }
 
-h2 {
+/* First Slide */
+#title {
   font-family: "Satisfy";
-  margin-top: 5vh;
-  font-size: 5vh;
+  margin-top: 2vh;
+  font-size: 4vh;
 }
 
-#page-container {
-  height: 300vh;
-  display: flex;
-  flex-direction: column;
+#name {
+  font-size: 7vh;
+  font-weight: bold;
 }
 
-.section-container {
-  border: 3px solid red;
-  height: 100vh;
-  text-align: center;
+#i-wrapper {
+  max-height: 25vh;
+  max-width: 30%;
+  margin: 2% auto;
 }
 
-h4 {
-  margin-top: 5vh;
-  font-size: 5vh;
+#i-wrapper img {
+  object-fit: scale-down;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-button {
-  margin-top: 6vh;
+#tb {
+  margin-top: 25vh;
+}
+
+#time {
+  font-size: 4vh;
+  padding: 3%;
+  display: inline;
+}
+
+#serving {
+  display: inline;
+  font-size: 4vh;
+  padding: 3%;
+}
+
+#st-bt {
+  display: block;
+  margin: 5vh auto;
   font-size: 3vh;
   border-style: none;
   border-radius: 50px;
@@ -52,7 +73,88 @@ button {
   transition: 0.3s;
 }
 
-button:hover {
+#st-bt:hover {
   background-color: white;
   cursor: pointer;
+}
+
+/* Instruction Containers */
+.section-container {
+  border: 2px solid #FFE4E1;
+  height: 100vh;
+  text-align: center;
+}
+
+.section-container .count {
+  font-size: 15vh;
+  margin-top: 3vh;
+  font-weight: bold;
+  padding: 2%;
+}
+
+.section-container .instr {
+  font-size: 7vh;
+  width: 80%;
+  margin: auto;
+}
+
+/* Last Slide */
+#maido {
+  margin: 25vh auto 10vh;
+  font-size: 13vh;
+  width: 75%;
+}
+
+#ed-bt {
+  display: block;
+  margin: 5vh auto;
+  font-size: 3vh;
+  border-style: none;
+  border-radius: 50px;
+  border: 1px solid #ffe4e1;
+  padding: 1% 5%;
+  color: #ffe4e1;
+  background-color: #c86868;
+  transition: 0.3s;
+}
+
+#ed-bt:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Buttons */
+.nav {
+  height: 100vh;
+  width: 25%;
+  position: fixed;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#back {
+  left: 0;
+  top: 0;
+}
+
+#forward {
+  right: 0;
+  top: 0;
+}
+
+.pointer {
+  position: fixed;
+  transition: 0.3s;
+}
+
+#iback {
+  left: 5vw;
+  top: 42.5vh;
+  opacity: 0;
+}
+
+#iforward {
+  right: 5vw;
+  top: 42.5vh;
+  opacity: 0;
 }
