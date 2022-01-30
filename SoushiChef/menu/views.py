@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 # Bringing in models
 from signup.models import userprofile
@@ -15,6 +16,8 @@ from .forms import Search
 
 # Create your views here.
 def menu(request):
+    user = userprofile.objects.get(username = "jlo411")
+    u_favorites = user.favorites.all()
     # Handling search
     if request.method == 'POST':
         search_form = Search(data=request.POST)
@@ -22,6 +25,7 @@ def menu(request):
             search = request.POST['search']
             results = recipeModel.objects.filter(name__icontains = search)
             context = {
+                "favorites": u_favorites,
                 "search": search,
                 "results": results,
                 "searchbar": Search
@@ -31,14 +35,26 @@ def menu(request):
     initalize_recipes()
         
     # Render Page w/ Data
-    user = userprofile.objects.get(username = request.user)
     recipes = recipeModel.objects.all()
+    print(u_favorites)
     context = {
+        "favorites": u_favorites,
         "user": user,
         "recipes": recipes,
         "searchbar": Search
     }
     return render(request, 'menu/menu.html', context)
+
+@csrf_exempt
+def favorite(request):
+    if request.is_ajax and request.method == "POST":
+        recipe_name = request.POST['name']
+        recipe = recipeModel.objects.get(name = recipe_name)
+        user = userprofile.objects.get(username = "jlo411")
+        user.favorites.add(recipe)
+        user.save()
+        return JsonResponse({"instance": "instance"}, status=200)
+    return JsonResponse({"error": "error"}, status=400)
 
 
 # Helper Functions

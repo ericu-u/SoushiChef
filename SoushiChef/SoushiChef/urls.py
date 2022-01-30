@@ -6,7 +6,7 @@ from landing.views import landing
 from cook.views import cook, route_cook
 from login.views import login
 from signup.views import signup
-from menu.views import menu
+from menu.views import menu, favorite
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -15,5 +15,6 @@ urlpatterns = [
     path('login', login, name="login"),
     path('signup', signup, name="signup"),
     path('menu', menu, name="menu"),
-    path('post/ajax/route_cook', route_cook, name="route_cook")
+    path('post/ajax/route_cook', route_cook, name="route_cook"),
+    path('post/ajax/favorite', favorite, name="favorite")
 ]

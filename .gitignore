@@ -4,6 +4,3 @@ notebooks/.ipynb_checkpoints
 # config secrets ;)
 notebooks/config.txt
 
-# settings
-SoushiChef/SoushiChef/settings.py
-

@@ -24,6 +24,14 @@ body {
     display: flex;
 }
 
+.left {
+    flex: 5;
+}
+
+.right {
+    flex: 5;
+}
+
 .search {
     margin-top: 5vh;
 }
@@ -33,9 +41,9 @@ body {
     border-radius: 200px;
     font-size: 16px;
     background: var(--c3) url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-    width: 100%;
+    width: 90%;
     transition: 0.3s;
-    margin-top: 10px;
+    margin: 10px auto 0;
     border: solid 1px #ccc;
     padding: 2% 2% 2% 8%;
 }
@@ -54,11 +62,11 @@ body {
 }
 
 .topfeasts {
-    width: 100%;
+    width: 90%;
     background-color: var(--c3);
     border-radius: 20px;
     padding: 3%;
-    margin-top: 5vh;
+    margin: 5vh auto 0;
     height: 75vh;
 }
 
@@ -249,4 +257,49 @@ body {
     color: var(--c1);
 }
 
+.favbtn {
+    background-color: var(--c1);
+    color: white;
+    padding: 1.5% 4%;
+    border: 1px solid white;
+    border-radius: 500px;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+.favbtn:hover {
+    background-color: var(--c3);
+    cursor: pointer;
+    border: 1px solid var(--c1);
+    color: var(--c1);
+}
+
+.favorites {
+    width: 90%;
+    margin: 5vh auto 0;
+    height: 90vh;
+    background-color: var(--c3);
+    border-radius: 20px;
+    padding: 2%;
+}
+
+.favorites #favt {
+    font-size: 5vh;
+    color: var(--c1);    
+}
+
+.fav-sec {
+    height: 90%;
+    overflow-y: scroll;
+}
+
+.fav-sec::-webkit-scrollbar {
+    width: 10px;
+}
+
+.fav-sec::-webkit-scrollbar-thumb {
+    background-color: var(--c1);
+    border-radius: 200px;
+}
 
